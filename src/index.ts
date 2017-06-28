@@ -21,7 +21,7 @@ const server = app.listen(port, () => {
 // schedule to ping Heroku every 15min
 const targetHost = process.env.TARGET_HOST;
 const rule = new Schedule.RecurrenceRule();
-rule.hour = [0, new Schedule.Range(21, 6)];
+rule.hour = [21, 22, 23, 0, 1, 2, 3, 4, 5];
 rule.minute = [0, 15, 30, 45];
 
 const job = Schedule.scheduleJob(rule, () => {
